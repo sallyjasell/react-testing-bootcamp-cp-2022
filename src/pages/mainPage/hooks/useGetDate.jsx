@@ -5,7 +5,7 @@ export const useGetDate = () => {
   const [errors, setErrors] = useState(false);
   const [pictureOfTheDay, setPictureOfTheDay] = useState([]);
   const tzoffset = (new Date()).getTimezoneOffset() * 60000;
-  const [dateSelected, setDateSelected] = useState(new Date(Date.now() - tzoffset));
+  const [dateSelected, setDateSelected] = useState(new Date(tzoffset > 0 ? Date.now() : Date.now() - tzoffset));
 
   useEffect(() => {
     const url = `https://api.nasa.gov/planetary/apod?api_key=zfiJIOKtBMcmy9INeU9CLAMddVwhv0Zy1ac5v4zm&date=${
