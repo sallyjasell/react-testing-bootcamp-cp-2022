@@ -1,0 +1,1 @@
+export { CreateMainPage } from "./mainPage"
